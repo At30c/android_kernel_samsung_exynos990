@@ -1,7 +1,9 @@
 #!/bin/bash
 
 echo "Installing dependencies..."
-sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install bc cpio repo git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install ccache bc cpio repo git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+echo "Updating KSU Next..."
+curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
 
 abort()
 {
